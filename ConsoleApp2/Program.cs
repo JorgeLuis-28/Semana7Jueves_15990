@@ -11,7 +11,7 @@ namespace ConsoleApp2
         static void Main(string[] args)
         {
             string[] Nombres = new string[0];
-            string[] Numeros = new string[0];
+            int[] Numeros = new int[0];
             int cnt = 0;
             int op;
             do
@@ -30,6 +30,7 @@ namespace ConsoleApp2
                 switch (op)
                 {
                     case 1:
+                        RegistrarContacto(Nombres, Numeros);
                         break;
                     case 0:
                         Console.WriteLine("SALIENDO...");
@@ -39,6 +40,11 @@ namespace ConsoleApp2
                 }
                 Console.ReadKey();
             }while (op != 0);
+        }
+        static void RegistrarContacto(string[] nombre, int[] numero)
+        {
+            Array.Resize(ref nombre, 1);
+            Array.Resize(ref numero, 1);
         }
     }
 }
